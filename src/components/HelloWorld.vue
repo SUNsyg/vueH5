@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <h2>{{ title }}</h2>
 
-    <div v-for="item in 10"
+    <div class="numberBox" v-for="item in 10"
          :key="item">
       {{item}}
     </div>
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="less" scoped>
 h3 {
   margin: 40px 0 0;
 }
@@ -51,4 +51,9 @@ li {
 a {
   color: #42b983;
 }
+  .numberBox {
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+  }
 </style>

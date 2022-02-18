@@ -12,6 +12,8 @@
 
 
     <input type="button" @click="throttleClick" value="节流函数"/>
+
+    <div class="hrefBtn" @click="go">去count页面</div>
   </div>
 </template>
 
@@ -40,10 +42,23 @@ export default {
     }, 500),
     throttleClick: throttle(function() {
       console.log(222)
-    }, 1000)
+    }, 1000),
+    go() {
+      this.$router.push('/count')
+    }
   },
   components: {
     HelloWorld
   }
 }
 </script>
+
+<style lang="less" scoped>
+  .hrefBtn {
+    width: 300px;
+    height: 150px;
+    line-height: 150px;
+    font-size: 28px;
+    background: indianred;
+  }
+</style>
