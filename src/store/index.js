@@ -1,3 +1,10 @@
+<!--
+ * @Author: sunyinge
+ * @Date: 2022-02-21 16:49:34
+ * @LastEditors: sunyinge
+ * @LastEditTime: 2022-02-21 16:49:34
+ * @Description:
+-->
 import { createStore } from 'vuex'
 import { types } from "./mutation-types";
 
