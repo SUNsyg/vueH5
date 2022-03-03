@@ -3,9 +3,15 @@
     <h1>{{ msg }}</h1>
     <h2>{{ title }}</h2>
 
-    <div class="numberBox" v-for="item in 10"
+    <div class="numberBox" v-for="item in 2"
          :key="item">
       {{item}}
+    </div>
+    <div class="numberBox"
+         v-for="(value, name, index) in myObject"
+         :key="value"
+    >
+     {{index}}. {{name}}: {{value}}
     </div>
   </div>
 </template>
@@ -25,7 +31,13 @@ export default {
     }
   },
   data() {
-
+    return {
+      myObject: {
+        title: 'How to do lists in Vue',
+        author: 'Jane Doe',
+        publishedAt: '2020-03-22'
+      }
+    }
   },
   created() {
     console.log(this.title)
