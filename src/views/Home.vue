@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+
+<!--    <img alt="Vue logo" src="../assets/logo.png">-->
+
+    <Combination :user="combinationUser"></Combination>
 
     <keep-alive>
       <HelloWorld msg="Welcome to Your Vue.js App" v-model:title="tit"
@@ -54,6 +57,7 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import MyComponent from "../components/MyComponent";
+import Combination from "../components/Combination";
 import { debounce, throttle } from '../utils/utils'
 
 export default {
@@ -62,11 +66,12 @@ export default {
     return {
       phone: 18888888888,
       list: this.lists,
-      listLen: this.lists.length
+      listLen: this.lists.length,
     }
   },
   data() {
     return {
+      combinationUser: '组合式使用者',
       showMineFlag: false,
       noActivated: false,
       show: true,
@@ -106,7 +111,8 @@ export default {
   },
   components: {
     HelloWorld,
-    MyComponent
+    MyComponent,
+    Combination
   }
 }
 </script>

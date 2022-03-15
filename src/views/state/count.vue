@@ -11,6 +11,16 @@
       <component :is="val"></component>
     </transition>
   </div>
+
+  <div id="list-demo">
+    <button @click="add">Add</button>
+    <button @click="remove">Remove</button>
+    <transition-group name="list" tag="p">
+      <span v-for="item in items" :key="item" class="list-item">
+        {{ item }}
+      </span>
+    </transition-group>
+  </div>
 </template>
 
 <script>
@@ -19,6 +29,8 @@
     name: "count",
     data() {
       return {
+        items: [1, 2,3,4,5,6,7,8,9],
+        nextNum: 10,
         count: 0,
         arr: [],
         str: 'Hi, How are you? hi',
@@ -61,6 +73,15 @@
       // }
     },
     methods: {
+      randomIndex() {
+        return Math.floor(Math.random() * this.items.length)
+      },
+      add() {
+        this.items.splice(this.randomIndex(),0, this.nextNum++)
+      },
+      remove() {
+        this.items.splice(this.randomIndex(), 1)
+      },
       ...mapMutations([
           'incrementBy'
       ]),
@@ -97,5 +118,19 @@
     .component-fade-leave-to {
       opacity: 0;
     }
+  }
+
+  .list-item {
+    transition: all 0.8s ease;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .list-leave-active {
+    position: absolute;
+  }
+  .list-enter-from,
+  .list-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
   }
 </style>
