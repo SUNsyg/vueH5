@@ -59,9 +59,11 @@ import HelloWorld from '@/components/HelloWorld.vue'
 import MyComponent from "../components/MyComponent";
 import Combination from "../components/Combination";
 import { debounce, throttle } from '../utils/utils'
+import myMixin from '../utils/myMixin'
 
 export default {
   name: 'Home',
+  mixins: [myMixin],
   provide() {
     return {
       phone: 18888888888,
