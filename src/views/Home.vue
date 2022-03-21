@@ -14,9 +14,9 @@
 
     <input type="button" @click="changeShowFlag" value="显示我的组件"/>
     <div v-if="showMineFlag">
-      <MyComponent class="baz">
-        <template #user>名字是user的具名插槽</template>
-      </MyComponent>
+      <MyComponent class="baz" :level="'1'">我是渲染函数渲染出来的</MyComponent>
+<!--      <MyComponent class="baz" :level="'2'">我是渲染函数渲染出来的</MyComponent>-->
+<!--      <MyComponent class="baz" :level="'3'">我是渲染函数渲染出来的</MyComponent>-->
     </div>
 
 
@@ -73,6 +73,7 @@ export default {
   },
   data() {
     return {
+      level: '1',
       combinationUser: '组合式使用者',
       showMineFlag: false,
       noActivated: false,
